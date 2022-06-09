@@ -8,6 +8,7 @@ const binaryConverter = (num) => {
   myBinary = `${rem + myBinary}`;
   if (num > 0) binaryConverter(num)
 };
+//Binary to Decimal
 const decimalConverter = (binary) => {
   binary = binary.toString().split("").reverse().join("");
   let decimal = 0;
@@ -16,6 +17,7 @@ const decimalConverter = (binary) => {
   }
   return decimal;
 };
+
 const dec = 18;
 const bin = 1101;
 binaryConverter(dec);
@@ -43,7 +45,15 @@ console.log(`Maximum Number: ${maxNum}`);
 //problem3
 //frequency of words in an string
 console.log('\n\nProblem 3');
-const myString = 'I am Swapnil';
-const count = myString.split(" ").length;
-console.log(`Total Words: ${count}`);
-console.log(`Frequency of Words: ${((myString.length - count + 1) / count).toFixed(2)}`);
+let myString = 'I am Swapnil. Current I am studying in RUET';
+myString = myString.replace(". ", " ");
+const words = myString.split(" ");
+console.log(words);
+const freqOfWords = words.map(item => {
+  return {
+    word: item,
+    freq: words.filter(w => w === item).length
+  }
+})
+
+console.table(freqOfWords);
