@@ -45,7 +45,7 @@ console.log(`Maximum Number: ${maxNum}`);
 //problem3
 //frequency of words in an string
 console.log('\n\nProblem 3');
-let myString = 'I am Swapnil. Current I am studying in RUET';
+let myString = 'Rajshahi University of Engineering and Technology';
 myString = myString.replace(". ", " ");
 const words = myString.split(" ");
 console.log(words);
@@ -55,5 +55,4 @@ const freqOfWords = words.map(item => {
     freq: words.filter(w => w === item).length
   }
 })
-
 console.table(freqOfWords);
